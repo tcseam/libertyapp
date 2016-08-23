@@ -7,3 +7,5 @@ COPY Deployment/InitW1/InstallationComponent/appserver/server.xml /opt/ibm/wlp/u
 COPY Deployment/InitW1/InstallationComponent/scripts/startservers.sh /home
 # Expose the http, database and administration ports
 EXPOSE 8080 9443
+# Specify container startup command
+CMD /home/startservers.sh
