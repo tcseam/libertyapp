@@ -6,6 +6,7 @@ USER root
 COPY Deployment/InitW1/InstallationComponent/appserver/server.xml /opt/ibm/wlp/usr/servers/defaultServer
 COPY Deployment/InitW1/InstallationComponent/scripts/startservers.sh /home
 # Create necessary directories and set permissions
+RUN chmod 555 /home/startservers.sh && \
  mkdir  /home/logs && \
  chmod 777 /home/logs && \
  mkdir  /tmp/MasterCraftFileManager && \
