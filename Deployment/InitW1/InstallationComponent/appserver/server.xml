@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+    <!-- Enable features -->
+    <featureManager>
+        <feature>webProfile-7.0</feature>
+    </featureManager>
+
+    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="8080"
+                  httpsPort="9443"
+                   />
+                  
+    <!-- Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+	
+	<dataSource id="MCDataSource" jndiName="jdbc/MCDataSource" type="javax.sql.XADataSource">
+		<jdbcDriver javax.sql.XADataSource="org.postgresql.xa.PGXADataSource" libraryRef="MCDataSourceJDBCLib"/>
+		<properties databaseName="AppRepos3.0" serverName="localhost" password="postgres" portNumber="5432" user="postgres"/>
+	</dataSource>
+
+	<library id="MCDataSourceJDBCLib">
+		<fileset dir="C:\\EnterpriseAppsMaker\\EAM_V5.1/RequiredSoftware/Postgres8.4Jar" includes="postgresql-8.4-702.jdbc3.jar"/>
+	</library>
+
+</server>
