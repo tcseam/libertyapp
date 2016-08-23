@@ -9,8 +9,5 @@ COPY Deployment/InitW1/InstallationComponent/scripts/startservers.sh /home
 RUN chmod 555 /home/startservers.sh && \
  mkdir  /home/logs && \
  chmod 777 /home/logs && \
- mkdir  /tmp/MasterCraftFileManager && \
- chmod 777 /tmp/MasterCraftFileManager
-RUN chmod 555 /home/startservers.sh && \
 # Expose the http, database and administration ports
 EXPOSE 8080 9443
